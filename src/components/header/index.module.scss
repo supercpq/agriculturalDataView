@@ -1,0 +1,23 @@
+.header {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    font-weight: 700;
+    width: 100vw;
+    min-width: 950px;
+    color: #FFF;
+    background-image: url("@/assets/images/header-bg.png");
+    background-size: 100% 50px;
+    position: fixed;
+    .login-btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
