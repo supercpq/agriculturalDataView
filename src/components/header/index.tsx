@@ -3,7 +3,7 @@ import TimeView from './timeView';
 import { Button, Popconfirm } from 'antd';
 import useLoginStore from '@/stores/login';
 import LoginDialog from '@/components/login';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 interface HeaderProps {
     title: string;
 }
@@ -11,6 +11,9 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
     const { title } = props;
     const isLogined = useLoginStore((state: any) => state.isLogin)
+    const fetchUserInfo = useLoginStore((state: any) => state.fetchUserInfo);
+    const userInfo = useLoginStore((state: any) => state.userInfo);
+    const setLogout = useLoginStore((state: any) => state.logout);
     const [isShowLogin, setIsShowLogin] = useState(false)
     const goLogin = () => {
         setIsShowLogin(true);
@@ -20,7 +23,11 @@ const Header = (props: HeaderProps) => {
     }
     const logout = () => {
         alert('登出成功')
+        setLogout();
     }
+    useEffect(() => {
+        fetchUserInfo()
+    }, []);
     return (
         <div className={styles.header}>
             {title}
@@ -33,7 +40,7 @@ const Header = (props: HeaderProps) => {
                     okText="是的"
                     cancelText="不"
                 >
-                    <Button danger className={styles.loginBtn}>登出</Button>
+                    <Button danger className={styles.loginBtn}>{userInfo?.displayName}, 登出</Button>
                 </Popconfirm>
                 : <Button
                     type="primary"

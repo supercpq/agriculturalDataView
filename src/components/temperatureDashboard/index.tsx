@@ -1,7 +1,7 @@
 import { Chart } from '@antv/g2';
 import { Drawer } from 'antd';
 import { useEffect, useState } from 'react';
-
+import Prediction from './prediction';
 interface TemperatureDashboardProps {
     currentTemperature: number;
     temperatureList: number[];
@@ -67,7 +67,7 @@ const TemperatureDashboard = (props: TemperatureDashboardProps) => {
         <Drawer
             title={`具体信息`}
             placement="right"
-            size="default"
+            size="large"
             onClose={onClose}
             open={open}
         >
@@ -79,6 +79,7 @@ const TemperatureDashboard = (props: TemperatureDashboardProps) => {
                     height: 260,
                 }}
             />
+            <Prediction/>
         </Drawer>
     );
       

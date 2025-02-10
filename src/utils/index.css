@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.box-special-borders-angle {
+    background: linear-gradient(#1c16df, #1c16df) left top, linear-gradient(#1c16df, #1c16df) left top, linear-gradient(#1c16df, #1c16df) right top, linear-gradient(#1c16df, #1c16df) right top, linear-gradient(#1c16df, #1c16df) left bottom, linear-gradient(#1c16df, #1c16df) left bottom, linear-gradient(#1c16df, #1c16df) right bottom, linear-gradient(#1c16df, #1c16df) right bottom;
+    background-repeat: no-repeat;
+    background-size: 3px 15px, 15px 3px;
+}
