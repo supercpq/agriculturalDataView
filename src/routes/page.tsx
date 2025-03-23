@@ -10,7 +10,9 @@ import StatisticCard from '@/components/statistic/card';
 import Prediction from '@/components/temperatureDashboard/prediction';
 import useLoginStore from '@/stores/login';
 import noLogin from '@/assets/images/no-login.svg';
+import { useBadjs } from '@/utils/hooks/useBadjs';
 const Index = () => {
+  useBadjs();
   const headerNode = () => (
     <Header title="农业大棚大数据展示系统"/>
   );
